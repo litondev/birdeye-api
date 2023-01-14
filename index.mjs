@@ -2,65 +2,108 @@ import notifier from 'node-notifier';
 import fetch from "node-fetch";
 
 let tokens = [
-    {
-        "wallet" : 32000000,
-        "address" : "5yxNbU8DgYJZNi3mPD9rs4XLh9ckXrhPjJ5VCujUWg5H",
-        "name" : "Fronk",
-        "hold_value" : 0.00000010,
-        "take_profit" : {
-            "type" : "percentage",
-            "nominal" : 50,
-            "check_time" : 5,
-            "count_time" : 1
-        },
-        "cut_lost" : {
-            "type" : "percentage",
-            "nominal" : 10,
-            "check_time" : 5,
-            "count_time" : 1
-        },
-        "decimal" : 8,
-    },
+    // {
+    //     "wallet" : 32000000,
+    //     "address" : "5yxNbU8DgYJZNi3mPD9rs4XLh9ckXrhPjJ5VCujUWg5H",
+    //     "name" : "Fronk",
+    //     // "hold_value" : 0.00000010,
+    //     // "take_profit" : {
+    //     //     "type" : "percentage",
+    //     //     "nominal" : 50,
+    //     //     "check_time" : 5,
+    //     //     "count_time" : 1
+    //     // },
+    //     // "cut_lost" : {
+    //     //     "type" : "percentage",
+    //     //     "nominal" : 10,
+    //     //     "check_time" : 5,
+    //     //     "count_time" : 1
+    //     // },
+    //     "decimal" : 8,
+    // },
 
     {
         "wallet" : 2400000,
         "address" : "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
         "name" : "Bonk",    
         "hold_value" : 0.00000100,
-        "take_profit" : {
-            "type" : "percentage",
-            "nominal" : 50,
-            "check_time" : 5,
-            "count_time" : 1
-        },
-        "cut_lost" : {
-            "type" : "percentage",
-            "nominal" : 10,
-            "check_time" : 5,
-            "count_time" : 1
-        },
+        // "take_profit" : {
+        //     "type" : "percentage",
+        //     "nominal" : 50,
+        //     "check_time" : 5,
+        //     "count_time" : 1
+        // },
+        // "cut_lost" : {
+        //     "type" : "percentage",
+        //     "nominal" : 10,
+        //     "check_time" : 5,
+        //     "count_time" : 1
+        // },
         "decimal" : 8,
     },
 
-    {
-        "wallet" : 79000000,
-        "address" : "o1Mw5Y3n68o8TakZFuGKLZMGjm72qv4JeoZvGiCLEvK",
-        "name" : "Cope",
-        "hold_value" : 0.000000010000,
-        "take_profit" : {
-            "type" : "percentage",
-            "nominal" : 50,
-            "check_time" : 5,
-            "count_time" : 1
-        },
-        "cut_lost" : {
-            "type" : "percentage",
-            "nominal" : 10,
-            "check_time" : 5,
-            "count_time" : 1
-        },
-        "decimal" : 12,
-    }
+    // {
+    //     "wallet" : 11000000,
+    //     "address" : "G7ShEqeEmPogtqEWs8CLG2t6dj1vo6geDzokpckEg7Fj",
+    //     "name" : "Bumpp Inu",        
+    //     "hold_value" : 0.0000003100,
+    //     "take_profit" : {
+    //         "type" : "percentage",
+    //         "nominal" : 50,
+    //         "check_time" : 1,
+    //         "count_time" : 0
+    //     },
+    //     "cut_lost" : {
+    //         "type" : "percentage",
+    //         "nominal" : 10,
+    //         "check_time" : 1,
+    //         "count_time" : 0
+    //     },
+    //     "decimal" : 10,
+    // },
+    
+
+    // {
+    //     "wallet" : 490000000,
+    //     "address" : "o1Mw5Y3n68o8TakZFuGKLZMGjm72qv4JeoZvGiCLEvK",
+    //     "name" : "Cope",
+    //     // $0.000000008154
+    //     "hold_value" : 0.000000008600,
+    //     "take_profit" : {
+    //         "type" : "percentage",
+    //         "nominal" : 10,
+    //         "check_time" : 3,
+    //         "count_time" : 0
+    //     },
+    //     "cut_lost" : {
+    //         "type" : "percentage",
+    //         "nominal" : 10,
+    //         "check_time" : 3,
+    //         "count_time" : 0
+    //     },
+    //     "decimal" : 12,
+    // }
+
+
+    // {
+    //     "wallet" : 450000000,
+    //     "address" : "Doggoyb1uHFJGFdHhJf8FKEBUMv58qo98CisWgeD7Ftk",
+    //     "name" : "DOGGO",
+    //     "hold_value" : 0.0000001000,
+    //     "take_profit" : {
+    //         "type" : "percentage",
+    //         "nominal" : 10,
+    //         "check_time" : 3,
+    //         "count_time" : 0
+    //     },
+    //     "cut_lost" : {
+    //         "type" : "percentage",
+    //         "nominal" : 10,
+    //         "check_time" : 3,
+    //         "count_time" : 0
+    //     },
+    //     "decimal" : 10,
+    // }
 ];
 
 setInterval(async () => {
@@ -81,8 +124,8 @@ setInterval(async () => {
 
         // let data = {
         //     data : {
-        //         '5yxNbU8DgYJZNi3mPD9rs4XLh9ckXrhPjJ5VCujUWg5H': {
-        //             value: 4.756218149788346e-8,
+        //         'G7ShEqeEmPogtqEWs8CLG2t6dj1vo6geDzokpckEg7Fj': {
+        //             value: 3000.756218149788346e-10,
         //             updateUnixTime: 1673606178,
         //             updateHumanTime: '2023-01-13T10:36:18',
         //             priceChange24h: -13.026235650153472
@@ -91,6 +134,8 @@ setInterval(async () => {
         // }
 
         Object.keys(data.data).forEach(item  => {
+            console.log("\n");
+
             let index = tokens.findIndex(itemToken => itemToken.address === item);
 
             if(index >= 0){    
@@ -102,11 +147,15 @@ setInterval(async () => {
                 ){
                     let take_profit = parseFloat(tokens[index].hold_value) *  (parseFloat(tokens[index].take_profit.nominal) / 100);
 
-                    // console.log(new Number(take_profit).toFixed(tokens[index].decimal));
+                    console.log("=========TP============");
+
+                    console.log(new Number(take_profit).toFixed(tokens[index].decimal));
 
                     take_profit += parseFloat(tokens[index].hold_value);
 
-                    // console.log(new Number(take_profit).toFixed(tokens[index].decimal));
+                    console.log(new Number(take_profit).toFixed(tokens[index].decimal));
+
+                    console.log("=========================");
 
                     if(fixedNumber >= take_profit){                        
                         if(tokens[index].take_profit.count_time >= tokens[index].take_profit.check_time){
@@ -129,11 +178,15 @@ setInterval(async () => {
                 ){
                     let cut_lost = parseFloat(tokens[index].hold_value) * (parseFloat(tokens[index].cut_lost.nominal / 100))
 
-                    // console.log(new Number(cut_lost).toFixed(tokens[index].decimal));
+                    console.log("=========CL============");
+
+                    console.log(new Number(cut_lost).toFixed(tokens[index].decimal));
 
                     cut_lost = parseFloat(tokens[index].hold_value) - parseFloat(cut_lost);
 
-                    // console.log(new Number(cut_lost).toFixed(tokens[index].decimal));
+                    console.log(new Number(cut_lost).toFixed(tokens[index].decimal));
+
+                    console.log("=========================");
 
                     if(fixedNumber <= cut_lost){                        
                         let modal =  tokens[index].hold_value * parseFloat(tokens[index].wallet);
@@ -165,6 +218,8 @@ setInterval(async () => {
                 //     console.log('Token : ' + tokens[index].name + " " + fixedNumber.toString() + " " + new Date());
                 // }        
             }
+
+            console.log("\n");
         })
 
         console.log("Done Request");    
@@ -172,4 +227,4 @@ setInterval(async () => {
         console.log(err);
         console.log("Error Request");
     }
-},60000);
+},30000);
