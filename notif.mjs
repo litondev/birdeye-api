@@ -7,29 +7,57 @@ import fetch from "node-fetch";
     artinya jika mulus maka 10 kali saja sudah cukup
 */
 let tokens = [
-    {    
-        "address" : "o1Mw5Y3n68o8TakZFuGKLZMGjm72qv4JeoZvGiCLEvK",
-        "name" : "Cope",          
-        "decimal" : 12,
-        "wallet" : 130000000,
-        "hold_usd" : 1
-    },     
-
-    {
-        "address" : "Doggoyb1uHFJGFdHhJf8FKEBUMv58qo98CisWgeD7Ftk",
-        "name" : "Doggo",          
-        "decimal" : 12,
-        "wallet" : 8000000,
-        "hold_usd" : 1
-    },
-
     {
         "address" : "5yxNbU8DgYJZNi3mPD9rs4XLh9ckXrhPjJ5VCujUWg5H",
         "name" : "Fronk",          
         "decimal" : 12,
-        "wallet" : 17000000,
+        "wallet" : 22000000,
         "hold_usd" : 1
     },
+
+    {    
+        "address" : "o1Mw5Y3n68o8TakZFuGKLZMGjm72qv4JeoZvGiCLEvK",
+        "name" : "Cope",          
+        "decimal" : 12,
+        "wallet" : 140000000,
+        "hold_usd" : 1
+    },     
+
+
+    {    
+        "address" : "G7ShEqeEmPogtqEWs8CLG2t6dj1vo6geDzokpckEg7Fj",
+        "name" : "Bumpp",          
+        "decimal" : 10,
+        "wallet" : 2000000,
+        "hold_usd" : 1
+    },  
+
+     
+    {    
+        "address" : "GPyzPHuFFGvN4yWWixt6TYUtDG49gfMdFFi2iniTmCkh",
+        "name" : "Chili",          
+        "decimal" : 12,
+        "wallet" : 24000000,
+        "hold_usd" : 1
+    },
+
+    // {
+    //     "address" : "EVwSh47k8GEuVGbVohtTe1dhAaxoUoyV53m5Qi6APu3F",
+    //     "name" : "Magic",          
+    //     "decimal" : 10,
+    //     "wallet" : 24000000,
+    //     "hold_usd" : 1
+    // }
+
+    // {
+    //     "address" : "Doggoyb1uHFJGFdHhJf8FKEBUMv58qo98CisWgeD7Ftk",
+    //     "name" : "Doggo",          
+    //     "decimal" : 12,
+    //     "wallet" : 8000000,
+    //     "hold_usd" : 1
+    // },
+
+  
 
     // {    
     //     "address" : "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
@@ -38,23 +66,6 @@ let tokens = [
     //     "wallet" : 4000000,
     //     "hold_usd" : 1
     // },
-
-    {    
-        "address" : "G7ShEqeEmPogtqEWs8CLG2t6dj1vo6geDzokpckEg7Fj",
-        "name" : "Bumpp",          
-        "decimal" : 10,
-        "wallet" : 3000000,
-        "hold_usd" : 1
-    },  
-    
-    // {    
-    //     "address" : "GPyzPHuFFGvN4yWWixt6TYUtDG49gfMdFFi2iniTmCkh",
-    //     "name" : "Chili",          
-    //     "decimal" : 12,
-    //     "wallet" : 45000000,
-    //     "hold_usd" : 1
-    // },
-
 ];
 
 setInterval(async () => {
@@ -103,15 +114,17 @@ setInterval(async () => {
                     lose = (parseFloat(tokens[index].hold_usd) - parseFloat(money_now)).toFixed(2);
                 }            
 
-                notifier.notify({
-                    title: 'Token : ' + tokens[index].name,
-                    message: 'Price : ' + fixedNumber.toString() + '\nProfit : ' + profit.toString() + '\nLost : ' + lose.toString() + "\nMoney : " + money_now,
-                    time: 30000,
-                });
+                if(profit >= 1.10 || lose >= 0.50){
+                    notifier.notify({
+                        title: 'Token : ' + tokens[index].name,
+                        message: 'Price : ' + fixedNumber.toString() + '\nProfit : ' + profit.toString() + '\nLost : ' + lose.toString() + "\nMoney : " + money_now,
+                        time: 30000,
+                    });
+                }
             }
         })
     }catch(err){
         console.log(err);
         console.log("Error Request");
     }
-},60000);
+},120000);
