@@ -1,14 +1,60 @@
 import notifier from 'node-notifier';
 import fetch from "node-fetch";
 
+/*
+    BEST SEKENARIO : 
+    10 dollar dibagi 10 coin 
+    artinya jika mulus maka 10 kali saja sudah cukup
+*/
 let tokens = [
     {    
-        "address" : "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
-        "name" : "Bonk",          
-        "decimal" : 10,
-        "wallet" : 4000000,
-        "hold_usd" : 4
+        "address" : "o1Mw5Y3n68o8TakZFuGKLZMGjm72qv4JeoZvGiCLEvK",
+        "name" : "Cope",          
+        "decimal" : 12,
+        "wallet" : 130000000,
+        "hold_usd" : 1
+    },     
+
+    {
+        "address" : "Doggoyb1uHFJGFdHhJf8FKEBUMv58qo98CisWgeD7Ftk",
+        "name" : "Doggo",          
+        "decimal" : 12,
+        "wallet" : 8000000,
+        "hold_usd" : 1
     },
+
+    {
+        "address" : "5yxNbU8DgYJZNi3mPD9rs4XLh9ckXrhPjJ5VCujUWg5H",
+        "name" : "Fronk",          
+        "decimal" : 12,
+        "wallet" : 17000000,
+        "hold_usd" : 1
+    },
+
+    // {    
+    //     "address" : "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+    //     "name" : "Bonk",          
+    //     "decimal" : 10,
+    //     "wallet" : 4000000,
+    //     "hold_usd" : 1
+    // },
+
+    {    
+        "address" : "G7ShEqeEmPogtqEWs8CLG2t6dj1vo6geDzokpckEg7Fj",
+        "name" : "Bumpp",          
+        "decimal" : 10,
+        "wallet" : 3000000,
+        "hold_usd" : 1
+    },  
+    
+    // {    
+    //     "address" : "GPyzPHuFFGvN4yWWixt6TYUtDG49gfMdFFi2iniTmCkh",
+    //     "name" : "Chili",          
+    //     "decimal" : 12,
+    //     "wallet" : 45000000,
+    //     "hold_usd" : 1
+    // },
+
 ];
 
 setInterval(async () => {
